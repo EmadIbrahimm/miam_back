@@ -3,8 +3,7 @@ const mongoose=require('mongoose');
 
 
 const ListIngredientsSchema = new mongoose.Schema({
-    name : String,
-    unity : String,
+    quantity : String,
     created:{
         type:Date,
         default:Date.now
@@ -16,7 +15,7 @@ const ListIngredients = mongoose.model('ListIngredients',ListIngredientsSchema);
 
 // ListIngredient sans s 
 const ListIngredient = new ListIngredients({
-    name :'onions',
+    quantity :'onions',
     unity :'2 Kg',
     
   });

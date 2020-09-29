@@ -5,6 +5,10 @@ const mongoose=require('mongoose');
 const ingredientsSchema = new mongoose.Schema({
     name : String,
     unity : String,
+    user : {
+        type : mongoose.Types.ObjectId,
+        ref: 'user',
+    },
     created:{
         type:Date,
         default:Date.now
