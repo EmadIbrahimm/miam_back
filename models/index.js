@@ -1,12 +1,11 @@
-const User = require('./user');
-const ingredients = require('./ingredients');
-const recipes = require('./recipes')
+const User = require('./User');
+const Ingredient = require('./Ingredient');
+const Recipe = require('./Recipe')
+const ListIngredient = require('./ListIngredient');
 
-const ListIngredients = require('./ListIngredients');
 module.exports = {
     User ,
-    ListIngredients,
-    ingredients,
-    recipes,
+    ListIngredient,
+    Ingredient,
+    Recipe,
 } ;
-

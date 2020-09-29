@@ -2,7 +2,7 @@ const { strict } = require('assert');
 const mongoose=require('mongoose');
 
 
-const recipesSchema=new mongoose.Schema({
+const RecipeSchema=new mongoose.Schema({
     title : String,
     dishType : String,
     photo : String,
@@ -18,9 +18,9 @@ const recipesSchema=new mongoose.Schema({
 
 });
 
-const recipes = mongoose.model('recipes',recipesSchema);
+const Recipe = mongoose.model('Recipe',RecipeSchema);
 
-const recipe = new recipes({
+const Recipe = new Recipe({
     title : 'rise',
     dishType : 'main dish',
     preparationTime :15,
@@ -28,11 +28,11 @@ const recipe = new recipes({
     difficultyLevel : 3,
   });
   
-  recipe.save((err,recipesDB)=>{
+  Recipe.save((err,RecipeDB)=>{
     console.log('err',err);
-   console.log('recipes',recipesDB)
+   console.log('Recipe',RecipeDB)
 
 });
   
 
-module.exports = recipes ;
+module.exports = Recipe ;

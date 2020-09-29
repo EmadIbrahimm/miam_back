@@ -2,7 +2,7 @@ const { strict } = require('assert');
 const mongoose=require('mongoose');
 
 
-const ingredientsSchema = new mongoose.Schema({
+const IngredientSchema = new mongoose.Schema({
     name : String,
     unity : String,
     user : {
@@ -16,19 +16,19 @@ const ingredientsSchema = new mongoose.Schema({
 
 });
 
-const Ingredients = mongoose.model('Ingredients',ingredientsSchema);
+const Ingredient = mongoose.model('Ingredient',IngredientSchema);
 
-const ingredients = new Ingredients({
+const Ingredient = new Ingredient({
     name :'tomate',
-    unity :'5 Kg',
+    unity :'g', // "g": grams, "ml": mililiter or "" 
     
   });
   
-  ingredients.save((err,ingredientsDB)=>{
+  Ingredient.save((err,IngredientDB)=>{
     console.log('err',err);
-   console.log('ingredientsDB',ingredientsDB)
+   console.log('IngredientDB',IngredientDB)
 
 });
   
 
-module.exports = Ingredients ;
+module.exports = Ingredient ;

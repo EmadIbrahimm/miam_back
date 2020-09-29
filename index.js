@@ -2,10 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 
-const User = require('./models/user');
-const Ingredients = require('./models/ingredients');
-const ListIngredients = require('./models/ListIngredients');
-const recipes = require('./models/recipes');
+const User = require('./models/User');
+const Ingredient = require('./models/Ingredient');
+const ListIngredient = require('./models/ListIngredient');
+const Recipe = require('./models/Recipe');
 
 const port = process.env.PORT || 3000;
 
@@ -17,15 +17,16 @@ app.use(express.json());
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost:27017/miam',
     {
-     useNewUrlParser: true,
-     useUnifiedTopology: true,
-     useCreateIndex: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true
     },  
-     (err)=>{
+    (err)=>{
         if (err === null) {
             console.log('DB is connected')
         }
-});
+    }
+);
 
 app.listen(port, ()=>{
     console.log(`Server started on port : ${port}!`)
