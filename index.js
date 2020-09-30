@@ -7,7 +7,7 @@ const Ingredient = require('./models/Ingredient');
 const ListIngredient = require('./models/ListIngredient');
 const Recipe = require('./models/Recipe');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const app = express();
 

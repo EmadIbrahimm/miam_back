@@ -29,8 +29,8 @@ const recipe = new Recipe({
   });
   
   recipe.save((err,RecipeDB)=>{
-    console.log('err',err);
-   console.log('Recipe',RecipeDB)
+//     console.log('err',err);
+//    console.log('Recipe',RecipeDB)
 
 });
   

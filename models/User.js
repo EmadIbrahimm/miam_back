@@ -19,21 +19,4 @@ const userSchema=new mongoose.Schema({
 
 const User = mongoose.model('User',userSchema);
 
-const user = new User({
-    username:'playing',
-    firstname:'noone',
-    lastname:'donthave',
-    dateOfBirth : 11/04/1980,
-    email : 'email@gmail.com',
-    password:'okokokok',
-
-  });
-  
-  user.save((err,userDb)=>{
-    console.log('err',err);
-   console.log('userDb',userDb)
-
-});
-  
-
 module.exports = User ;
