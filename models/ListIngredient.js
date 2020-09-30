@@ -14,13 +14,13 @@ const ListIngredientSchema = new mongoose.Schema({
 const ListIngredient = mongoose.model('ListIngredient',ListIngredientSchema);
 
 // ListIngredient sans s 
-const ListIngredient = new ListIngredient({
+const listIngredient = new ListIngredient({
     quantity :'onions',
     unity :'2 Kg',
     
   });
   
-  ListIngredient.save((err,ListIngredientDB)=>{
+  listIngredient.save((err,ListIngredientDB)=>{
     console.log('err',err);
    console.log('ListIngredientDB',ListIngredientDB)
 
