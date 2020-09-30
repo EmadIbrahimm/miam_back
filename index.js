@@ -2,10 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 
-const User = require('./models/User');
-const Ingredient = require('./models/Ingredient');
-const ListIngredient = require('./models/ListIngredient');
-const Recipe = require('./models/Recipe');
+const User = require('./models').User;
 
 const port = process.env.PORT || 3000;
 
