@@ -7,6 +7,7 @@ const Ingredient = require('./models/Ingredient');
 const ListIngredient = require('./models/ListIngredient');
 const Recipe = require('./models/Recipe');
 
+
 const port = process.env.PORT || 3000;
 
 const app = express();
@@ -27,6 +28,8 @@ mongoose.connect(
         }
     }
 );
+
+app.use('/', Ingredient); 
 
 app.listen(port, ()=>{
     console.log(`Server started on port : ${port}!`)

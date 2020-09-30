@@ -47,29 +47,30 @@ const Ingredient = mongoose.model('Ingredient', {
 
 
 
-app.post("/ing", (req, res) => {   
-    console.log('POST /ing', req.body)
-    const {
-        name = '',
-        unity = '',
+// app.post("/ing", (req, res) => {   
+//     console.log('POST /ing', req.body)
+//     const {
+//         name = '',
+//         unity = '',
        
-    } = req.body;
+//     } = req.body;
 
-const ingredient = new ingredient({
-    name,
-    address,
-    city,
-    country,
-    stars,
-    hasSpa
-});
+// const ingredient = new ingredient({
+//     name,
+//     address,
+//     city,
+//     country,
+//     stars,
+//     hasSpa
+// });
 
-ingredients.save((err, ingredient) => {
-    res.json({
-    success: true,
-    data: ingredient
-    });
- });
+// ingredients.save((err, ingredient) => {
+//     res.json({
+//     success: true,
+//     data: ingredient
+//     });
+//  });
 
-});
-module.exports = Ingredient ;
+// });
+// module.exports = Ingredient ;
+
