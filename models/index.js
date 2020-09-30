@@ -7,5 +7,5 @@ module.exports = {
     User ,
     ListIngredient,
     Ingredient,
-    Recipe,
+    Recipe
 } ;

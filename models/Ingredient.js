@@ -44,12 +44,13 @@ const Ingredient = mongoose.model('Ingredient', {
 });
 
 // module.exports = Model;
-
-
+app.post("/", (req, res) => {   
+  console.log('POST /ingredient')
+});
 
 app.post("/ing", (req, res) => {   
-    console.log('POST /ing', req.body)
-    const {
+  console.log('POST /ingredient/ing', req.body)
+  const {
         name = '',
         unity = '',
        
@@ -57,14 +58,15 @@ app.post("/ing", (req, res) => {
 
 const ingredient = new ingredient({
     name,
-    address,
-    city,
-    country,
-    stars,
-    hasSpa
+    unity
+    // address,
+    // city,
+    // country,
+    // stars,
+    // hasSpa
 });
 
-ingredients.save((err, ingredient) => {
+ingredient.save((err, ingredient) => {
     res.json({
     success: true,
     data: ingredient
@@ -72,4 +74,4 @@ ingredients.save((err, ingredient) => {
  });
 
 });
-module.exports = Ingredient ;
+module.exports = Ingredient;

@@ -30,8 +30,8 @@ const user = new User({
   });
   
   user.save((err,userDb)=>{
-    console.log('err',err);
-   console.log('userDb',userDb)
+//     console.log('err',err);
+//    console.log('userDb',userDb)
 
 });
   

@@ -21,8 +21,8 @@ const listIngredient = new ListIngredient({
   });
   
   listIngredient.save((err,ListIngredientDB)=>{
-    console.log('err',err);
-   console.log('ListIngredientDB',ListIngredientDB)
+//     console.log('err',err);
+//    console.log('ListIngredientDB',ListIngredientDB)
 
 });
   
