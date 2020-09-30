@@ -1,77 +1,17 @@
 const { strict } = require('assert');
 const mongoose=require('mongoose');
-const express = require('express');
+// const { ingredient } = require('../controllers');
 
-const app = express();
-
-// const IngredientSchema = new mongoose.Schema({
-//     name : String,
-//     unity : String,
-//     user : {
-//         type : mongoose.Types.ObjectId,
-//         ref: 'user',
-//     },
-//     created:{
-//         type:Date,
-//         default:Date.now
-//     },
-
-// });
-
-// const Ingredient = mongoose.model('Ingredient',IngredientSchema);
-
-// const ingredient = new Ingredient({
-//     name :'tomate',
-//     unity :'g', // "g": grams, "ml": mililiter or "" 
-    
-//   });
-  
-//   ingredient.save((err,IngredientDB)=>{
-//     console.log('err',err);
-//    console.log('IngredientDB',IngredientDB)
-
-// });
-
-
-
-const Ingredient = mongoose.model('Ingredient', {
-  name: String,
-  unity: String,
-  created: {
-    type: Date,
-    default: Date.now,
+const ingredientSchema = new mongoose.Schema({
+    name : String,
+    unity : String,
+    created:{
+      type:Date,
+      default:Date.now
   },
-});
 
-// module.exports = Model;
-app.post("/", (req, res) => {   
-  console.log('POST /ingredient')
-});
+}); //Schema Definition
 
-app.post("/ing", (req, res) => {   
-  console.log('POST /ingredient/ing', req.body)
-  const {
-        name = '',
-        unity = '',
-       
-    } = req.body;
+const Ingredient = mongoose.model('Ingredient', ingredientSchema);
 
-const ingredient = new ingredient({
-    name,
-    unity
-    // address,
-    // city,
-    // country,
-    // stars,
-    // hasSpa
-});
-
-ingredient.save((err, ingredient) => {
-    res.json({
-    success: true,
-    data: ingredient
-    });
- });
-
-});
 module.exports = Ingredient;

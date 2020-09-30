@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const User = require('./models').User;
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const app = express();
 
