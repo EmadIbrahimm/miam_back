@@ -91,10 +91,12 @@ router.post("/signup", upload.single('photo'), (req, res) => {
 
 router.get("/login", (req, res) => {
     if (req.isAuthenticated()) {
-        console.log
+        console.log('Is authenticated')
         console.log('req.isAuthenticated()', req.isAuthenticated());
         // res.redirect("/admin");
     } else {
+        console.log("Isn't authenticated")
+        console.log('req.isAuthenticated()', req.isAuthenticated());
         // res.render("login");
     }
 });
