@@ -1,5 +1,5 @@
-module.exports = {
-    ingredient: require('./ingredient'),
-    logout: require('./logout'),
-    // other routes will be added here 
-};
+// module.exports = {
+//     ingredient: require('./ingredients'),
+//     logout: require('./logouts'),
+//     // other routes will be added here 
+// };

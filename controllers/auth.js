@@ -10,7 +10,7 @@ const LocalStrategy = require("passport-local");
 const { session } = require("passport");
 const multer  = require('multer');
 const upload = multer({ dest: 'src/uploads/' }); 
-const User = require('../models/User');
+const User = require('../models/user');
 
 const app = express();
 

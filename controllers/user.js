@@ -40,20 +40,21 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/', (req, res) => {
+    console.log('POST/req.body', req.body);
    const {
         username = '',
          firstname= '',
         lastname = '',
-        email = '',
         password= '',
         photo = '',
       } = req.body;
+
+      
     
       const user = new UserModel({
         username,
         firstname,
         lastname,
-        email,
         password,
         photo
       }); 

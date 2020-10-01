@@ -28,6 +28,23 @@ router.post("/", (req, res) => {
   console.log('POST /ingredient')
   console.log('POST /ingredient', req.body)
 
+  const {
+    name = '',
+    unity = ''
+  } = req.body;
+
+ const ingredient = new IngredientModel({
+      name,
+      unity
+  }); 
+
+  ingredient.save((err, ingredient) => {
+    res.json({
+      success: true,
+      data: ingredient
+    });
+  });
+
   
 });
   // Redirect to a Database modification of ingredients ???
