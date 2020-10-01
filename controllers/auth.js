@@ -1,121 +1,116 @@
 const express = require('express');
-const expressSession = require("express-session");
-const MongoStore = require("connect-mongo")(expressSession);
-
-const router = express.Router();
-
-const mongoose = require("mongoose");
-const passport = require("passport");
-const LocalStrategy = require("passport-local");
-const { session } = require("passport");
+const expressSession = require('express-session');
+const MongoStore = require('connect-mongo')(expressSession);
+const mongoose = require('mongoose');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
 const multer  = require('multer');
 const upload = multer({ dest: 'src/uploads/' }); 
-const User = require('../models/User');
+const User = require('../models').User;
 
+const router = express.Router();
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
+app.use(
+    expressSession({
+        secret: '9UI]SWà0:{m£SYxkl$D]FS-mvXH€q:*F',
+        resave: false,
+        saveUninitialized: false,
+        store: new MongoStore({ mongooseConnection: mongoose.connection })
+    })
+);
 
-/* authorization session manage */  
-app.use(expressSession({
-    secret: "9UI]SWà0:{m£SYxkl$D]FS-mvXH€q:*F",
-    resave: false,
-    saveUninitialized: false,
-    store: new MongoStore({mongooseConnection: mongoose.connection})
-}));
-
-/* Passport configuration */
 app.use(passport.initialize());
 app.use(passport.session());
-
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-/* End: passport config */
 
-/* route GET/ */
-router.get('/', (req, res)=>{
-    console.log('GET / ');
-    console.log('signup',req.body)
+router.get("/", (req, res) => {
+    console.log("GET /");
 });
-/* End: route GET/ */
 
-/* route POST/signup */
-router.post('/signup', upload.single('photo'), (req, res) => {
-    console.log('POST /signup');
-    // console.log('signup',req.body)
-    // console.log('singing up ...');
-    // console.log('singing req.body', req.body);
-    // console.log('Singup req.file',req.file)
-    // console.log('Singup req.user',req.user)
-    // console.log('Singup req.file',req.file.mimetype)
-    // console.log('Singup req.file.mimetype.slice(6)',req.file.mimetype.slice(6))
-   
-    const photoExt = req.file.mimetype.slice(6)
+router.get("/admin", (req, res) => {
+    console.log("GET /admin");
+    if (req.isAuthenticated()) {
+        console.log('req.user', req.user);
+        res.render("admin");
+    } else {
+        res.redirect("/");
+    }
+});
+
+router.get("/signup", (req, res) => {
+    console.log("GET /signup");
+    if (req.isAuthenticated()) {
+        console.log(req.user);
+        console.log('GET/signup ok go to admin');
+        res.redirect("/admin");
+    } else {
+        res.render("signup");
+    }
+});
+
+router.post("/signup", upload.single('photo'), (req, res) => {
+    console.log("POST /signup");
+
+    const photoExt = req.file.mimetype.slice(6) // Get file extension (jpeg, gif, png)
     const username = req.body.username;
     const password = req.body.password;
+    const confirmation = req.body.confirmation;
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const dateOfBirth = req.body.dateOfBirth;
     const photo = '../src/uploads/' + req.file.filename + '.' + photoExt;
 
-    console.log('Singup username', username);
-    console.log('Singup password', password);
-    console.log('Singup firstName', firstName);
-    console.log('Singup lastName', lastName);
-    console.log('Singup dateOfBirth', dateOfBirth);
-    console.log('Singup photo', photo);
 
     User.register(
-        new User({
-            username,
-            firstName,
-            lastName,
-            dateOfBirth,
-            photo
-        }),
-        password, 
+    new User({
+        username,
+        firstName,
+        lastName,
+        dateOfBirth,
+        photo
+    }), 
+    password, // password will be hashed
         (err, user) => {
             if (err) {
                 console.log("/signup user register err", err);
-                return;
+                return res.render("signup");
             } else {
                 passport.authenticate("local")(req, res, () => {
-                    // console.log('req', req.body)
-                    // console.log('res', res)
-                    return;
+                    console.log('POST/signup ok go to admin')
+                    res.redirect("/admin");
                 });
             }
-        });   
+        }
+    );
+});
+
+router.get("/login", (req, res) => {
+    if (req.isAuthenticated()) {
+        console.log
+        console.log('req.isAuthenticated()', req.isAuthenticated());
+        // res.redirect("/admin");
+    } else {
+        // res.render("login");
     }
+});
+
+router.post(
+    "/login",
+    passport.authenticate("local", {
+        successRedirect: "/admin",
+        failureRedirect: "/login"
+    })
 );
-/* End: route POST/signup */
 
-// /* route POST/login */
-// router.get('/login', function (req, res) {
-//     console.log('GET /login');
-//     if (req.isAuthenticated()) {
-//       return;
-//     } else {
-//       const user = req.user || {};
-//       const paramsTpl = {
-//         user: user,
-//         isAuthenticated: req.isAuthenticated(),
-//         isAdmin: user.role === 'admin',
-//         page: defaults.page,
-//         scripts: defaults.scripts,
-//         stylesheets: defaults.stylesheets,
-//         isLoginPage: true,
-//       };
-//       console.log('GET /login paramsTpl', paramsTpl);
-//       res.render('auth/login', paramsTpl);
-//     }
-//   });
-// /* End: route POST/login */
-
-router.get('/logout', (req, res) => {
-    console.log('GET logout/ logout.js');
+router.get("/logout", (req, res) => {
+    console.log("GET /logout");
     req.logout();
-    res.redirect('../');
+    res.redirect("/");
 });
 
 module.exports = router;

@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const authController = require('./controllers/auth'); 
 
 const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 /* Connection & connect params */
 const port = process.env.PORT || 3000;
