@@ -6,7 +6,11 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const multer  = require('multer');
 const upload = multer({ dest: 'src/uploads/' }); 
+<<<<<<< HEAD
 const User = require('../models').User;
+=======
+const User = require('../models/user');
+>>>>>>> b15b18c060283f9ddd88a1c0d825d1eb2f84187f
 
 const router = express.Router();
 const app = express();

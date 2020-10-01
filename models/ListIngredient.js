@@ -2,8 +2,16 @@ const { strict } = require('assert');
 const mongoose=require('mongoose');
 
 
-const ListIngredientSchema = new mongoose.Schema({
+const listIngredientSchema = new mongoose.Schema({
     quantity : String,
+    ingredient : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Ingredient'
+    },
+    user : {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
     created:{
         type:Date,
         default:Date.now
@@ -11,20 +19,7 @@ const ListIngredientSchema = new mongoose.Schema({
 
 });
 
-const ListIngredient = mongoose.model('ListIngredient',ListIngredientSchema);
+const ListIngredient = mongoose.model('ListIngredient',listIngredientSchema);
 
-// ListIngredient sans s 
-const listIngredient = new ListIngredient({
-    quantity :'onions',
-    unity :'2 Kg',
-    
-  });
-  
-  listIngredient.save((err,ListIngredientDB)=>{
-//     console.log('err',err);
-//    console.log('ListIngredientDB',ListIngredientDB)
 
-});
-  
-
-module.exports = ListIngredient ;
+module.exports = ListIngredient;
