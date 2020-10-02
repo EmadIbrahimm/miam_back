@@ -3,3 +3,7 @@
 //     logout: require('./logouts'),
 //     // other routes will be added here 
 // };
+
+module.exports = {
+    
+}

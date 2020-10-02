@@ -49,23 +49,6 @@ router.post("/", (req, res) => {
 });
   // Redirect to a Database modification of ingredients ???
 
-  // const {
-  //   name = '',
-  //   unity = ''
-  // } = req.body;
-
-//  const ingredient = new IngredientModel({
-//       name,
-//       unity
-//   }); 
-
-//   ingredient.save((err, ingredient) => {
-//     res.json({
-//       success: true,
-//       data: ingredient
-//     });
-//   });
-
 
 
 
