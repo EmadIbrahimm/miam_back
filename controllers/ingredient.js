@@ -38,10 +38,10 @@ router.post("/", (req, res) => {
       unity
   }); 
 
-  ingredient.save((err, ingredient) => {
+  ingredient.save((err, ingredients) => {
     res.json({
       success: true,
-      data: ingredient
+      data: ingredients
     });
   });
 
