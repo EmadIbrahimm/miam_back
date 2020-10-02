@@ -38,33 +38,16 @@ router.post("/", (req, res) => {
       unity
   }); 
 
-  ingredient.save((err, ingredient) => {
+  ingredient.save((err, ingredients) => {
     res.json({
       success: true,
-      data: ingredient
+      data: ingredients
     });
   });
 
   
 });
   // Redirect to a Database modification of ingredients ???
-
-  // const {
-  //   name = '',
-  //   unity = ''
-  // } = req.body;
-
-//  const ingredient = new IngredientModel({
-//       name,
-//       unity
-//   }); 
-
-//   ingredient.save((err, ingredient) => {
-//     res.json({
-//       success: true,
-//       data: ingredient
-//     });
-//   });
 
 
 
