@@ -10,9 +10,12 @@ router.post("/", (req, res) => {
     const {
       title = '',
       dishType = '',
-      preparationTime,
-      cookingTime,
-      difficultyLevel,
+      preparationTime = 0,
+      cookingTime = 0,
+      difficultyLevel = 0,
+      recipeSteps = [],
+      ingredients
+      
     } = req.body;
   
    const recipe = new RecipeModel({
@@ -20,7 +23,9 @@ router.post("/", (req, res) => {
         dishType,
         preparationTime,
         cookingTime,
-        difficultyLevel
+        difficultyLevel,
+        recipeSteps,
+        ingredients
     }); 
   
     recipe.save((err, recipes) => {
@@ -34,7 +39,7 @@ router.post("/", (req, res) => {
 });
 
 
-router.get('/', (req, res) => {
+router.get('/:id', (req, res) => {
   RecipeModel.find({}, (err, recipes)=> {
     if (err) {
       res.json({
