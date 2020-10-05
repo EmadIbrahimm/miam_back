@@ -52,7 +52,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
 /* Connection & connect params   connection has been moved to config file  3/10 Emad */
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3003;
 
 /* End: Connection & connect params // connection has been moved to config file  3/10 Emad */
 
