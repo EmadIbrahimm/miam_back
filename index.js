@@ -5,6 +5,7 @@ const expressSession = require('express-session');
 const MongoStore = require('connect-mongo')(expressSession);
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const cors = require('cors');
 
 const User = require('./models/user');
 
@@ -23,6 +24,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(cors());
 
 app.use(
     expressSession({
