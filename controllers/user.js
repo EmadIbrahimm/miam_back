@@ -7,9 +7,10 @@ console.log('UserModel', UserModel);
 // const multer  = require('multer');
 // const upload = multer({ dest: 'src/uploads/' }); 
 
-
 router.get('/', (req, res) => {
+    // console.log('requestemad',req)
     UserModel.find({}, (err, users)=> {
+        console.log('users', users);
         if (err) {
             res.json({
                 success : false,
@@ -20,7 +21,9 @@ router.get('/', (req, res) => {
         res.json({
             success: true,
             data: users
+            
         });
+        console.log('res.status(status).json(obj)',res.status());
     });
 });
 

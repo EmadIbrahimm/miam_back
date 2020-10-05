@@ -8,13 +8,17 @@ const LocalStrategy = require('passport-local');
 
 const User = require('./models/user');
 
-const authController = require('./controllers/auth'); // Didier
+const authController = require('./controllers/auth'); 
 const listIngredientController = require('./controllers/listIngredient');
 const recipeController = require('./controllers/recipe');
 const userController = require('./controllers/user');
 const ingredientController = require('./controllers/ingredient.js');
 const favoriController = require('./controllers/favori'); 
 
+// DB connection from config
+const connectDB = require('./config/db')
+
+connectDB()
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -28,6 +32,16 @@ app.use(
         store: new MongoStore({ mongooseConnection: mongoose.connection })
     })
 );
+/* End: Connection & connect params */
+
+/* Routes */
+app.use('/', authController); // Didier
+app.use('/ingredients', ingredientController);
+app.use('/users', userController);
+app.use('/recipes', recipeController);
+app.use('/listingredients', listIngredientController);
+app.use('/favoris', favoriController);
+/* End: Routes */
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,23 +51,10 @@ passport.deserializeUser(User.deserializeUser());
 
 
 
-/* Connection & connect params */
+/* Connection & connect params   connection has been moved to config file  3/10 Emad */
 const port = process.env.PORT || 3000;
 
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/miam',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    },  
-    (err)=>{
-        if (err === null) {
-            console.log('DB is connected')
-        }
-    }
-);
-/* End: Connection & connect params */
+/* End: Connection & connect params // connection has been moved to config file  3/10 Emad */
 
 /* Routes */
 app.use('/', authController); // Didier
