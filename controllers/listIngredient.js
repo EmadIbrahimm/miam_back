@@ -6,6 +6,7 @@ console.log('ListIngredient', ListIngredient);
 
 
 
+// router.get('/:userId', (req, res) => {
 router.get('/', (req, res) => {
     ListIngredient.find({}, (err, listingredients)=> {
     if (err) {

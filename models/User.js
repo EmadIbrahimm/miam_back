@@ -18,8 +18,37 @@ const UserSchema = new mongoose.Schema({
     },
 });
 
+// Utilisateur de test
+const passport = require('passport');
+
 UserSchema.plugin(passportLocalMongoose);
 
 const User = mongoose.model('User', UserSchema);
+
+User.register(
+    new User({
+        username: "Batman",
+        firstName: "Bruce",
+        lastName: "Wayne",
+        dateOfBirth: 1939-05-01,
+        photo: '../src/uploads/users/Batman.jpeg'
+    }),
+    "123456789",
+    (err, user) => {
+        if (err) {
+            console.log("/signup user register err", err);
+            // res.render("signup");
+            return;
+        } else {
+            passport.authenticate("local")(req, res, () => {
+                console.log('POST/signup ok go to admin')
+                res.redirect("/admin");
+            })
+        };
+    }
+);
+//  Fin utilisateur de test */
+
+
 
 module.exports = User;
