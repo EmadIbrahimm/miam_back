@@ -1,10 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const passport = require('passport');
 const multer  = require('multer');
-const upload = multer({ dest: 'src/uploads/' }); 
-const User = require('../models/user');
 const fs = require('fs');
+
+const User = require('../models/user');
+
+const upload = multer({ dest: 'src/uploads/users/' }); 
 
 const router = express.Router();
 
@@ -47,9 +48,9 @@ router.post("/signup", upload.single('photo'), (req, res) => {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
     const dateOfBirth = req.body.dateOfBirth;
-    const photo = '../src/uploads/' + fileName;
+    const photo = '../src/uploads/users' + fileName;
     
-    fs.rename( req.file.path, 'src/uploads/' + fileName, (err) => {
+    fs.rename( req.file.path, 'src/uploads/users/' + fileName, (err) => {
         if (err !== null) {
             console.log('renaming error', err);
             return;

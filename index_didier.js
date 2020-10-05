@@ -10,7 +10,7 @@ const User = require('./models/user');
 
 const authController = require('./controllers/auth'); // Didier
 const listIngredientController = require('./controllers/listIngredient');
-const recipeController = require('./controllers/recipe');
+const recipeController = require('./controllers/recipe_didier');
 const userController = require('./controllers/user');
 const ingredientController = require('./controllers/ingredient.js');
 const favoriController = require('./controllers/favori'); 
@@ -38,7 +38,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
 /* Connection & connect params */
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3003;
 
 mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost:27017/miam',
