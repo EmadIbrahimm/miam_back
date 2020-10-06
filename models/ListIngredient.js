@@ -24,6 +24,9 @@ const ListIngredient = mongoose.model('ListIngredient',listIngredientSchema);
 
 /*/ lier du 5 unités de lait et 2 unités de farine avec Batman
 
+
+
+
 const IngredientModel = require('../models/ingredient');
 const UserModel = require('../models/user');
 

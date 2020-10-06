@@ -30,42 +30,45 @@ const recipeSchema=new mongoose.Schema({
 const Recipe = mongoose.model('Recipe',recipeSchema);
 
 // Recette de test
-
-Recipe({
-	title: "Oeuf mayonnaise",
-	dishType: "Entrée",
-	photos: [
-		"../src/uploads/recipes/photos/photo1.jpg",
-		"../src/uploads/recipes/photos/photo2.jpg",
-		"../src/uploads/recipes/photos/photo3.jpg"
-	],
-	video: "../src/uploads/recipes/videos/video1.jpg",
-	preparationTime: 10,
-	coockingTime: 10,
-	difficultyLevel: 3,
-	ingredients: [
-		{
-			// ingerdient: "id du jaune d’oeuf",
-			quantity: 1
-		},
-		{
-			// ingerdient: "id de moutarde",
-			quantity: 20
-		},
-		{
-			// ingerdient: "id de huile",
-			quantity: 250
-        }
-    ],
-	recipeSteps: [
-		"Faire bouillir de l'eau",
-		"Plonger les oeufs dans l'eau pendant 8 minutes",
-		"Pendant ce temps mélanger les jaunes d’oeuf  avec la moutarde",
-		"Fouetter en ajoutant l'huile petit à petit",
-		"Assaisonner"
-	]
-}).save();
-
+Recipe.find({}, (err, recipes) => {
+    if (recipes.length > 0) {
+      return;
+    };
+    Recipe({
+        title: "Oeuf mayonnaise",
+        dishType: "Entrée",
+        photos: [
+            "../src/uploads/recipes/photos/photo1.jpg",
+            "../src/uploads/recipes/photos/photo2.jpg",
+            "../src/uploads/recipes/photos/photo3.jpg"
+        ],
+        video: "../src/uploads/recipes/videos/video1.jpg",
+        preparationTime: 10,
+        coockingTime: 10,
+        difficultyLevel: 3,
+        ingredients: [
+            {
+                // ingredient: "id du jaune d’oeuf",
+                quantity: 1
+            },
+            {
+                // ingredient: "id de moutarde",
+                quantity: 20
+            },
+            {
+                // ingredient: "id de huile",
+                quantity: 250
+            }
+        ],
+        recipeSteps: [
+            "Faire bouillir de l'eau",
+            "Plonger les oeufs dans l'eau pendant 8 minutes",
+            "Pendant ce temps mélanger les jaunes d’oeuf  avec la moutarde",
+            "Fouetter en ajoutant l'huile petit à petit",
+            "Assaisonner"
+        ]
+    }).save();
+});
 //  Fin recette de test */
   
 module.exports = Recipe;
