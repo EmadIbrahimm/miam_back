@@ -22,6 +22,39 @@ const listIngredientSchema = new mongoose.Schema({
 
 const ListIngredient = mongoose.model('ListIngredient',listIngredientSchema);
 
-// lier du 5 unités de lait et 2 unités de farine avec Batman
+/*/ lier du 5 unités de lait et 2 unités de farine avec Batman
+
+const IngredientModel = require('../models/ingredient');
+const UserModel = require('../models/user');
+
+IngredientModel.findById({}, (err, ingredients)=> {
+    if (err) {
+        res.json({
+            success : false,
+            message : err.toSting()
+        });
+    return;
+    }
+    res.json({
+        success: true,
+        data: ingredients
+    });
+});
+
+
+UserModel.findOne({ name: "batman" }, (err, users)=> {
+    if (err) {
+        res.json({
+            success : false,
+            message : err.toSting()
+        });
+        return;
+    }
+    res.json({
+        success: true,
+        data: users
+    });
+});
+*/
 
 module.exports = ListIngredient;

@@ -11,7 +11,7 @@ const User = require('./models/user');
 
 const authController = require('./controllers/auth'); // Didier
 const listIngredientController = require('./controllers/listIngredient');
-const recipeController = require('./controllers/recipe_didier');
+const recipeController = require('./controllers/recipe');
 const userController = require('./controllers/user');
 const ingredientController = require('./controllers/ingredient.js');
 const favoriController = require('./controllers/favori'); 

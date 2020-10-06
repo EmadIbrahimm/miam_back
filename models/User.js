@@ -40,10 +40,7 @@ User.register(
             // res.render("signup");
             return;
         } else {
-            passport.authenticate("local")(req, res, () => {
-                console.log('POST/signup ok go to admin')
-                res.redirect("/admin");
-            })
+            passport.authenticate("local")
         };
     }
 );
