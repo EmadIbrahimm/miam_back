@@ -16,6 +16,10 @@ const userController = require('./controllers/user');
 const ingredientController = require('./controllers/ingredient.js');
 const favoriController = require('./controllers/favori'); 
 
+// DB connection from config
+const connectDB = require('./config/db')
+connectDB()
+
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -37,24 +41,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-
 /* Connection & connect params */
 const port = process.env.PORT || 3003;
-
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/miam',
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true
-    },  
-    (err)=>{
-        if (err === null) {
-            console.log('DB is connected')
-        }
-    }
-);
 /* End: Connection & connect params */
 
 /* Routes */

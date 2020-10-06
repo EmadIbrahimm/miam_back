@@ -34,16 +34,6 @@ app.use(
         store: new MongoStore({ mongooseConnection: mongoose.connection })
     })
 );
-/* End: Connection & connect params */
-
-/* Routes */
-app.use('/', authController); // Didier
-app.use('/ingredients', ingredientController);
-app.use('/users', userController);
-app.use('/recipes', recipeController);
-app.use('/listingredients', listIngredientController);
-app.use('/favoris', favoriController);
-/* End: Routes */
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -51,11 +41,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
-
 /* Connection & connect params   connection has been moved to config file  3/10 Emad */
-const port = process.env.PORT || 300;
-
+const port = process.env.PORT || 3003;
 /* End: Connection & connect params // connection has been moved to config file  3/10 Emad */
 
 /* Routes */
