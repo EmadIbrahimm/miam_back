@@ -8,9 +8,12 @@ console.log('ListIngredient', ListIngredient);
  
 router.get('/', (req, res) => {
     console.log('GET /listIngredient');
+    console.log('GET /listIngredient req.body', req.body);
     const {
         user = '',
     } = req.body;
+
+    console.log('GET /listIngredient user', user);
 
     ListIngredient.find({user})
     .populate('ingredient')
@@ -23,8 +26,8 @@ router.get('/', (req, res) => {
             return;
         };
 
-        console.log("listIngredient.ingredient", listIngredient.ingredient);
-        console.log("listIngredient.quantity", listIngredient.quantity);
+        // console.log("listIngredient.ingredient", listIngredient.ingredient);
+        // console.log("listIngredient.quantity", listIngredient.quantity);
 
         res.json({
             success: true,
@@ -55,13 +58,13 @@ router.post('/', (req, res) => {
     console.log('POST /listIngredient req.body', req.body);
     
     const username = req.body.username;
-    const ingredient = req.body.ingredient;
+    const newIngredient = req.body.ingredient;
     const quantity = req.body.quantity;
     var idUser = '';
     var idIngredient = '';
     
     User.findOne({username}, (err, user) => {
-        console.log('user', user);
+        // console.log('user', user);
         console.log('user._id', user._id);
         if (err) {
             console.log('err', err);
@@ -69,15 +72,15 @@ router.post('/', (req, res) => {
         };
         user = user._id;
 
-        // console.log('ingredient')
-        Ingredient.findOne({name: ingredient}, (err, userIngredient) => {
-            console.log('userIngredient', userIngredient);
-            console.log('userIngredient._id', userIngredient._id);
+        console.log('ingredient')
+        Ingredient.findOne({name: newIngredient}, (err, ingredient) => {
+            // console.log('userIngredient', userIngredient);
+            console.log('ingredient._id', ingredient._id);
                 if (err) {
                 console.log('err', err);
                 return;
             };
-            ingredient = userIngredient._id;
+            ingredient = ingredient._id;
 
             console.log('idUser', idUser);
             console.log('idIngredient', idIngredient);
