@@ -55,7 +55,7 @@ router.post('/', (req, res) => {
             console.log('err', err);
             return;
         };
-        user = user._id;
+        idUser = user._id;
 
         Ingredient.findOne({name: newIngredient}, (err, ingredient) => {
             // console.log('userIngredient', userIngredient);
@@ -65,14 +65,14 @@ router.post('/', (req, res) => {
                 console.log('err', err);
                 return;
             };
-            ingredient = ingredient._id;
+            idIngredient = ingredient._id;
 
             console.log('idUser', idUser);
             console.log('idIngredient', idIngredient);
     
             const listIngredient = new ListIngredient({
-                ingredient,
-                user,
+                ingredient: idIngredient,
+                user: idUser,
                 quantity
             }); 
             

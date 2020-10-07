@@ -53,19 +53,22 @@ Recipe.find({}, (err, recipes) => {
                 isMandatory: true
             },
             {
-                // ingredient: "id de moutarde",
-                quantity: 20
+                // ingredient: "id de mayonnaise",
+                quantity: 1,
+                isMandatory: true
             },
             {
-                // ingredient: "id de huile",
-                quantity: 250
+                // ingredient: "id de persil",
+                quantity: 1,
+                isMandatory: false
             }
         ],
         recipeSteps: [
             "Faire bouillir de l'eau",
             "Plonger les oeufs dans l'eau pendant 8 minutes",
-            "Pendant ce temps mélanger les jaunes d’oeuf  avec la moutarde",
-            "Fouetter en ajoutant l'huile petit à petit",
+            "Eplucher l'oeuf et le couper en 2",
+            "Mettre la mayonnaise sur l'oeuf",
+            "Ajouter le persil",
             "Assaisonner"
         ]
     }).save();

@@ -21,43 +21,50 @@ const listIngredientSchema = new mongoose.Schema({
 
 
 const ListIngredient = mongoose.model('ListIngredient',listIngredientSchema);
+///////////////////////////////////////////
 
-/*/ lier du 5 unités de lait et 2 unités de farine avec Batman
+// Ingredient.find({}, (err, ingredients) => {
+//     if (ingredients.length > 0) {
+//       return;
+//     };
+
+//     const username = req.body.username;
+//     const newIngredient = req.body.ingredient;
+//     const quantity = req.body.quantity;
+
+//     let idUser = '';
+//     let idIngredient = '';
+
+//     console.log('newIngredient', newIngredient);
+
+//     User.findOne({'Batman'}, (err, user) => {
+//         console.log('user._id', user._id);
+//         if (err) {
+//             console.log('err', err);
+//             return;
+//         };
+//         user = user._id;
+
+//         Ingredient.findOne({name: newIngredient}, (err, ingredient) => {
+//             // console.log('userIngredient', userIngredient);
+//             console.log('ingredient', {ingredient })
+//             console.log('ingredient._id', ingredient._id);
+//                 if (err) {
+//                 console.log('err', err);
+//                 return;
+//             };
+//             ingredient = ingredient._id;
+
+//             ListIngredient({
+//                 ingredient,
+//                 user,
+//                 quantity
+//             }).save()
 
 
-
-
-const IngredientModel = require('../models/ingredient');
-const UserModel = require('../models/user');
-
-IngredientModel.findById({}, (err, ingredients)=> {
-    if (err) {
-        res.json({
-            success : false,
-            message : err.toSting()
-        });
-    return;
-    }
-    res.json({
-        success: true,
-        data: ingredients
-    });
-});
-
-
-UserModel.findOne({ name: "batman" }, (err, users)=> {
-    if (err) {
-        res.json({
-            success : false,
-            message : err.toSting()
-        });
-        return;
-    }
-    res.json({
-        success: true,
-        data: users
-    });
-});
-*/
+//             });
+//         });
+    
+// })
 
 module.exports = ListIngredient;

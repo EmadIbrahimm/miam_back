@@ -50,6 +50,7 @@ Ingredient.find({}, (err, ingredients) => {
   Ingredient({name: 'Raisin', unity: 'unite'}).save();
   Ingredient({name: 'Ananas', unity: 'unite'}).save();
   Ingredient({name: 'Basilic', unity: 'kilo'}).save();
+  Ingredient({name: 'Persil', unity: 'kilo'}).save();
   Ingredient({name: 'Parmezan', unity: 'kilo'}).save();
   Ingredient({name: 'Tomate', unity: 'unite'}).save();
   Ingredient({name: 'Oignon', unity: 'unite'}).save();
