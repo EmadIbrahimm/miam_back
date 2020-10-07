@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
         if (err) {
             res.json({
                 success : false,
-                message : err.toSting()
+                message : err.toString()
             });
             return;
         }

@@ -34,6 +34,7 @@ router.get('/users/:id', (req, res) => {
     });
 });
 
+
 router.post('/', (req, res) => {
     console.log('POST /listIngredient');
     console.log('POST /listIngredient req.body', req.body);
@@ -79,7 +80,7 @@ router.post('/', (req, res) => {
                 if (err) {
                     res.json({
                         success : false,
-                        message : err.toSting()
+                        message : err.toString()
                     });
                     return;
                 }

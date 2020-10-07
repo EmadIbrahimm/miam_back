@@ -11,14 +11,14 @@ router.get('/', (req, res) => {
     if (err) {
       res.json({
           success : false,
-          message : err.toSting()
+          message : err.toString()
       });
       return;
-  }
-      res.json({
-          success: true,
-          data: ingredients
-      });
+    }
+    res.json({
+        success: true,
+        data: ingredients
+    });
   });
 });
 

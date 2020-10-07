@@ -9,10 +9,10 @@ const upload = multer({ dest: 'src/uploads/users/' });
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    console.log("GET /");
-    return;
-});
+// router.get("/", (req, res) => {
+//     console.log("GET /");
+//     return;
+// });
 
 router.get("/admin", (req, res) => {
     console.log("GET /admin");
@@ -38,6 +38,7 @@ router.get("/signup", (req, res) => {
 
 router.post("/signup", upload.single('photo'), (req, res) => {
     console.log("POST /signup");
+    console.log("POST /signup req.body", req.body);
 
     // console.log('file path', req.file.path )
 
@@ -67,18 +68,19 @@ router.post("/signup", upload.single('photo'), (req, res) => {
         photo
     }), 
     password, // password will be hashed
-        (err, user) => {
-            if (err) {
-                console.log("/signup user register err", err);
-                // res.render("signup");
-                return;
-            } else {
-                passport.authenticate("local")(req, res, () => {
-                    console.log('POST/signup ok go to admin')
-                    res.redirect("/admin");
-                });
-            }
+    (err, user) => {
+        if (err) {
+            res.json({
+                success : false,
+                message : err.toString()
+            });
+            return;
         }
+        res.json({
+            success: true,
+            data: user
+        })
+    }
     );
 });
 

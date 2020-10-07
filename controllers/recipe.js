@@ -3,40 +3,40 @@ const router = express.Router();
 const RecipeModel = require('../models/recipe');
 console.log('RecipeModel', RecipeModel);
  
-router.post("/", (req, res) => {   
-    console.log('POST /recipe')
-    console.log('POST /recipe', req.body)
+// router.post("/", (req, res) => {   
+//     console.log('POST /recipe')
+//     console.log('POST /recipe', req.body)
   
-    const {
-      title = '',
-      dishType = '',
-      preparationTime = 0,
-      cookingTime = 0,
-      difficultyLevel = 0,
-      recipeSteps = [],
-      ingredients
+//     const {
+//       title = '',
+//       dishType = '',
+//       preparationTime = 0,
+//       cookingTime = 0,
+//       difficultyLevel = 0,
+//       recipeSteps = [],
+//       ingredients
       
-    } = req.body;
+//     } = req.body;
   
-   const recipe = new RecipeModel({
-        title,
-        dishType,
-        preparationTime,
-        cookingTime,
-        difficultyLevel,
-        recipeSteps,
-        ingredients
-    }); 
+//    const recipe = new RecipeModel({
+//         title,
+//         dishType,
+//         preparationTime,
+//         cookingTime,
+//         difficultyLevel,
+//         recipeSteps,
+//         ingredients
+//     }); 
   
-    recipe.save((err, recipes) => {
-      res.json({
-        success: true,
-        data: recipes
-      });
-    });
+//     recipe.save((err, recipes) => {
+//       res.json({
+//         success: true,
+//         data: recipes
+//       });
+//     });
   
     
-});
+// });
 
 
 router.get('/:id', (req, res) => {
@@ -44,7 +44,7 @@ router.get('/:id', (req, res) => {
     if (err) {
       res.json({
           success : false,
-          message : err.toSting()
+          message : err.toString()
       });
       return;
   }
@@ -54,7 +54,6 @@ router.get('/:id', (req, res) => {
       });
   });
 });
-
 
 
 

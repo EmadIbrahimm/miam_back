@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         if (err) {
             res.json({
                 success : false,
-                message : err.toSting()
+                message : err.toString()
             });
             return;
         }
@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
         if (err) {
             res.json({
                 success : false,
-                message : err.toSting()
+                message : err.toString()
             });
             return;
         }
@@ -71,7 +71,7 @@ router.post('/',  (req, res) => {
         if (err) {
             res.json({
                 success : false,
-                message : err.toSting()
+                message : err.toString()
             });
             return;
         }

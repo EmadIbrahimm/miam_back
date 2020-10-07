@@ -41,6 +41,20 @@ Ingredient.find({}, (err, ingredients) => {
   Ingredient({name: 'Moutarde', unity: 'litre'}).save();
   Ingredient({name: 'Oeuf', unity: 'unite'}).save();
   Ingredient({name: 'Eau', unity: 'litre'}).save();
+  Ingredient({name: 'Mayonnaise', unity: 'litre'}).save();
+  Ingredient({name: 'Tomate', unity: 'litre'}).save();
+  Ingredient({name: 'Mozzarella', unity: 'kilo'}).save();
+  Ingredient({name: 'Spaghetti', unity: 'kilo'}).save();
+  Ingredient({name: 'Banane', unity: 'unite'}).save();
+  Ingredient({name: 'Orange', unity: 'unite'}).save();
+  Ingredient({name: 'Raisin', unity: 'unite'}).save();
+  Ingredient({name: 'Ananas', unity: 'unite'}).save();
+  Ingredient({name: 'Basilic', unity: 'kilo'}).save();
+  Ingredient({name: 'Parmezan', unity: 'kilo'}).save();
+  Ingredient({name: 'Tomate', unity: 'unite'}).save();
+  Ingredient({name: 'Oignon', unity: 'unite'}).save();
+  Ingredient({name: 'Herbes de provence', unity: 'unite'}).save();
+  Ingredient({name: 'Boeuf haché', unity: 'unite'}).save();
 });
 //  Fin ingrédients de test */
 

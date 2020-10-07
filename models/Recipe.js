@@ -36,7 +36,7 @@ Recipe.find({}, (err, recipes) => {
     };
     Recipe({
         title: "Oeuf mayonnaise",
-        dishType: "Entrée",
+        dishType: "Entree",
         photos: [
             "../src/uploads/recipes/photos/photo1.jpg",
             "../src/uploads/recipes/photos/photo2.jpg",
@@ -49,7 +49,8 @@ Recipe.find({}, (err, recipes) => {
         ingredients: [
             {
                 // ingredient: "id du jaune d’oeuf",
-                quantity: 1
+                quantity: 1,
+                isMandatory: true
             },
             {
                 // ingredient: "id de moutarde",
