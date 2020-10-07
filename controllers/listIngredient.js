@@ -6,12 +6,10 @@ const Ingredient = require('../models/ingredient');
 
 console.log('ListIngredient', ListIngredient);
  
-router.get('/', (req, res) => {
+router.get('/users/:id', (req, res) => {
     console.log('GET /listIngredient');
-    console.log('GET /listIngredient req.body', req.body);
-    const {
-        user = '',
-    } = req.body;
+    console.log('GET /listIngredient req.params.name', req.params.id);
+    const user = req.params.id
 
     console.log('GET /listIngredient user', user);
 
@@ -21,7 +19,7 @@ router.get('/', (req, res) => {
         if (err) {
             res.json({
                 success : false,
-                message : err.toSting()
+                message : err.toString()
             });
             return;
         };
@@ -36,23 +34,6 @@ router.get('/', (req, res) => {
     });
 });
 
-// router.get('/', (req, res) => {
-//     console.log('GET /listIngredient');
-//     ListIngredient.find({}, (err, listingredients)=> {
-//     if (err) {
-//       res.json({
-//           success : false,
-//           message : err.toSting()
-//       });
-//       return;
-//   }
-//       res.json({
-//           success: true,
-//           data: listingredients
-//       });
-//   });
-// });
-
 router.post('/', (req, res) => {
     console.log('POST /listIngredient');
     console.log('POST /listIngredient req.body', req.body);
@@ -60,8 +41,11 @@ router.post('/', (req, res) => {
     const username = req.body.username;
     const newIngredient = req.body.ingredient;
     const quantity = req.body.quantity;
-    var idUser = '';
-    var idIngredient = '';
+
+    let idUser = '';
+    let idIngredient = '';
+
+    console.log('newIngredient', newIngredient);
     
     User.findOne({username}, (err, user) => {
         // console.log('user', user);
@@ -72,9 +56,9 @@ router.post('/', (req, res) => {
         };
         user = user._id;
 
-        console.log('ingredient')
         Ingredient.findOne({name: newIngredient}, (err, ingredient) => {
             // console.log('userIngredient', userIngredient);
+            console.log('ingredient', {ingredient })
             console.log('ingredient._id', ingredient._id);
                 if (err) {
                 console.log('err', err);
@@ -104,17 +88,8 @@ router.post('/', (req, res) => {
                     data: listIngredient
                 });
             });
-
         });
-
-
-
     })
-       
-
-    
-        
-
-    
 });  
+
 module.exports = router;

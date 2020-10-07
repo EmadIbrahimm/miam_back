@@ -3,12 +3,12 @@ const mongoose=require('mongoose');
 
 
 const listIngredientSchema = new mongoose.Schema({
-    quantity : String,
-    ingredient : {
+    quantity: Number,
+    ingredient: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Ingredient'
     },
-    user : {
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
