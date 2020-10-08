@@ -23,8 +23,7 @@ UserSchema.plugin(passportLocalMongoose);
 
 const User = mongoose.model('User', UserSchema);
 
-// Utilisateur de test
-
+/*/ Utilisateur de test
 User.find({}, (err, users) => {
     if (users.length > 0) {
       return;

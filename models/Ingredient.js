@@ -24,7 +24,7 @@ const ingredientSchema = new mongoose.Schema({
 const Ingredient = mongoose.model('Ingredient', ingredientSchema);
 
 
-//  Ingrédients de test
+/*/  Ingrédients de test
 Ingredient.find({}, (err, ingredients) => {
   if (ingredients.length > 0) {
     return;

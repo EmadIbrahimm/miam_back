@@ -1,11 +1,11 @@
 const rawData =  require('../fixtures/listIngredients.json');
 
-const { Ingredient, User, ListIngredient } = require('../../models');
+const { ListIngredient } = require('../../models');
 const Model = ListIngredient;
 
-const importDb = ( ingredients, users, cb) => { // Create function with call back in argument
+const importDb = ( ingredients, userId, cb) => { // Create function with call back in argument
     console.log( 'importers/listIngredients #importDB ingredients', ingredients);
-    console.log( 'importers/listIngredients #importDB users', users);
+    console.log( 'importers/listIngredients #importDB userId', userId);
     
     Model.collection.dropIndexes( (err) => { // Indexes arn't deleted by deletMany
         if (err !== null) {
@@ -15,7 +15,31 @@ const importDb = ( ingredients, users, cb) => { // Create function with call bac
             if (err !== null) {
                 console.log('importers/listIngredients #dropIndexes err', err);
             };
-            Model.insertMany(rawData, (err, data) => {
+
+            const data = rawData.map( (el) => {
+                let result = {};
+
+                ingredients.forEach( (element) => {
+
+                    if ( el.name === element.name ) {
+                        result = {
+                            quantity: el.quantity,
+                            ingredient: element._id,
+                            user: userId
+                        };                        
+                        return;
+                    }
+                   
+                });
+                console.log('importers/listIngredients #map result', result);
+                return result;  
+
+            });
+
+            console.log('data', data);
+
+            Model.insertMany(data, (err, data) => {
+
                 if (err !== null) {
                     console.log('importers/listIngredients #insertMany err', err);
                     cb(err);
@@ -28,88 +52,3 @@ const importDb = ( ingredients, users, cb) => { // Create function with call bac
 }
 
 module.exports = importDb;
-
-/*ListIngredient.find({}, (err, ingredients) => {
-    if (ingredients.length > 0) {
-      return;
-    };
-
-    const User = require('../models/user');
-    const Ingredient = require('../models/ingredient');
-
-    const username = 'Batman';
-    const newIngredients = [
-        {
-            name: 'Tomate',
-            quantity: 12
-        },
-        {
-            name: 'Mozzarella',
-            quantity: 1
-        },
-        {
-            name: 'Spaghetti',
-            quantity: 1
-        },
-        {
-            name: 'Oignon / ognon',
-            quantity: 5
-        } ,
-        {
-            name: 'Boeuf haché',
-            quantity: 5
-        },
-        {
-            name: 'Banane',
-            quantity: 4
-        },
-        {
-            name: 'Raisin',
-            quantity: 3
-        },
-        {
-            name: 'Ananas',
-            quantity: 2
-        },
-        {
-            name: 'Oeuf',
-            quantity: 12
-        },
-        {
-            name: 'Mayonnaise',
-            quantity: 1
-        }
-    ];
-    
-    newIngredients.forEach( (el) => {
-        
-        User.findOne({username}, (err, user) => {
-            console.log('user', user);
-            console.log('user._id', user._id);
-            if (err) {
-                console.log('err', err);
-                return;
-            };
-            idUser = user._id;
-
-            Ingredient.findOne({ name: newIngredient[el].name }, (err, ingredient) => {
-                // console.log('userIngredient', userIngredient);
-                console.log('ingredient', {ingredient })
-                console.log('ingredient._id', ingredient._id);
-                    if (err) {
-                    console.log('err', err);
-                    return;
-                };
-                idIngredient = ingredient._id;
-
-                new ListIngredient({
-                    ingredient: idIngredient,
-                    user: idUser,
-                    quantity: newIngredient[el].quantity
-                }).save();
-            });
-
-        })
-    });
-
-})*/

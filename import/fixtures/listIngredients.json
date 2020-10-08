@@ -1,35 +1,30 @@
 [
     {
-        "name": "Batman",
-        "ingredients": [
-            {
-            "ingredient": "Tomate",
-            "quantity": 20
-            },
-            {
-            "ingredient": "Mozzarella",
-            "quantity": 20
-            },
-            {
-            "ingredient": "Raisin",
-            "quantity": 20
-            },
-            {
-            "ingredient": "Orange",
-            "quantity": 20
-            },
-            {
-            "ingredient": "Banane",
-            "quantity": 20
-            },
-            {
-            "ingredient": "Spaghetti",
-            "quantity": 20
-            },
-            {
-            "ingredient": "Mayonnaise",
-            "quantity": 20
-            }
-        ]
+    "name": "Tomate",
+    "quantity": 20
+    },
+    {
+    "name": "Mozzarella",
+    "quantity": 20
+    },
+    {
+    "name": "Raisin",
+    "quantity": 20
+    },
+    {
+    "name": "Orange",
+    "quantity": 20
+    },
+    {
+    "name": "Banane",
+    "quantity": 20
+    },
+    {
+    "name": "Spaghetti",
+    "quantity": 20
+    },
+    {
+    "name": "Mayonnaise",
+    "quantity": 20
     }
 ]

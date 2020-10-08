@@ -1,0 +1,36 @@
+[
+    {
+        "photos": [
+            "../src/uploads/recipes/photos/photo1.jpg",
+            "../src/uploads/recipes/photos/photo2.jpg",
+            "../src/uploads/recipes/photos/photo3.jpg"
+        ],
+        "recipeSteps": [
+            "Etape 1 : détail de l'étape",
+            "Etape 2 : détail de l'étape",
+            "Etape 3 : détail de l'étape"
+        ],
+        "title": "Tomate Mozza",
+        "dishType": "Entree",
+        "video": "../src/uploads/recipes/videos/video1.jpg",
+        "preparationTime": 10,
+        "difficultyLevel": 3,
+        "ingredients": [
+            {
+                "_id": "Tomate",
+                "quantity": 1,
+                "isMandatory": true
+            },
+            {
+                "_id": "Mozzarella",
+                "quantity": 20,
+                "isMandatory": true
+            },
+            {
+                "_id": "Basilic",
+                "quantity": 250,
+                "isMandatory": false
+            }
+        ]
+    }
+]
