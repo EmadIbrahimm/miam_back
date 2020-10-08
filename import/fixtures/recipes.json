@@ -32,5 +32,44 @@
                 "isMandatory": false
             }
         ]
+    },
+    {
+        "photos": [
+            "../src/uploads/recipes/photos/photo4.jpg",
+            "../src/uploads/recipes/photos/photo5.jpg",
+            "../src/uploads/recipes/photos/photo6.jpg"
+        ],
+        "recipeSteps": [
+            "Etape 1 : détail de l'étape",
+            "Etape 2 : détail de l'étape",
+            "Etape 3 : détail de l'étape"
+        ],
+        "title": "Spaghetti bolognaise",
+        "dishType": "Entree",
+        "video": "../src/uploads/recipes/videos/video2.jpg",
+        "preparationTime": 10,
+        "difficultyLevel": 3,
+        "ingredients": [
+            {
+                "_id": "Tomate",
+                "quantity": 2,
+                "isMandatory": true
+            },
+            {
+                "_id": "Spaghetti",
+                "quantity": 1,
+                "isMandatory": true
+            },
+            {
+                "_id": "Boeuf haché",
+                "quantity": 1,
+                "isMandatory": true
+            },
+            {
+                "_id": "Boeuf haché",
+                "quantity": 250,
+                "isMandatory": false
+            }
+        ]
     }
 ]
