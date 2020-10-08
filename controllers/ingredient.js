@@ -3,9 +3,6 @@ const router = express.Router();
 const IngredientModel = require('../models/ingredient');
 console.log('IngredientModel', IngredientModel);
  
-
-
-
 router.get('/', (req, res) => {
   IngredientModel.find({}, (err, ingredients)=> {
     if (err) {
@@ -21,8 +18,6 @@ router.get('/', (req, res) => {
     });
   });
 });
-
-
 
 router.post("/", (req, res) => {   
   console.log('POST /ingredient')
@@ -44,12 +39,8 @@ router.post("/", (req, res) => {
       data: ingredients
     });
   });
-
-  
+ 
 });
   // Redirect to a Database modification of ingredients ???
-
-
-
 
 module.exports = router;

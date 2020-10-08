@@ -18,7 +18,8 @@ const recipeSchema=new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Ingredient'
         },
-        quantity: Number
+        quantity: Number,
+        isMandatory: Boolean
     }],
     recipeSteps: [String],
     created:{
@@ -29,7 +30,7 @@ const recipeSchema=new mongoose.Schema({
 
 const Recipe = mongoose.model('Recipe',recipeSchema);
 
-// Recette de test
+/*/ Recette de test
 Recipe.find({}, (err, recipes) => {
     if (recipes.length > 0) {
       return;
