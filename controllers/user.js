@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const UserModel = require('../models/user');
-console.log('UserModel', UserModel);
+// console.log('UserModel', UserModel);
 // multer configurations
 // const fs = require('fs');
 // const multer  = require('multer');
@@ -54,9 +54,10 @@ router.post('/',  (req, res) => {
         firstname= '',
         lastname = '',
         password= '',
-        photo = '',
+        // photo = '',
       } = req.body;
 
+      const photo = req.body.photo;
       
     
       const user = new UserModel({
@@ -84,14 +85,14 @@ router.post('/',  (req, res) => {
 });
 
 
+// @Emad 
+// router.put('/', (req, res) => {
+//     // add ingredients 
+// });
 
-router.put('/', (req, res) => {
-    // add ingredients 
-});
 
-
-router.delete('/', (req, res) => {
-    // delete ingredients
-});
+// router.delete('/', (req, res) => {
+//     // delete ingredients
+// });
 
 module.exports = router;
