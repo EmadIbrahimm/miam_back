@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Batman",
+        "ingredients": [
+            {
+            "ingredient": "Tomate",
+            "quantity": 20
+            },
+            {
+            "ingredient": "Mozzarella",
+            "quantity": 20
+            },
+            {
+            "ingredient": "Raisin",
+            "quantity": 20
+            },
+            {
+            "ingredient": "Orange",
+            "quantity": 20
+            },
+            {
+            "ingredient": "Banane",
+            "quantity": 20
+            },
+            {
+            "ingredient": "Spaghetti",
+            "quantity": 20
+            },
+            {
+            "ingredient": "Mayonnaise",
+            "quantity": 20
+            }
+        ]
+    }
+]

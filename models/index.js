@@ -5,9 +5,9 @@ const ListIngredient = require('./ListIngredient');
 const Favori = require('./favori');
 
 module.exports = {
-    User ,
-    ListIngredient,
+    User,
     Ingredient,
     Recipe,
-    Favori
+    Favori,
+    ListIngredient,
 };
