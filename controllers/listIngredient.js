@@ -95,7 +95,7 @@ router.post('/', (req, res) => {
 
 
 
-// @delete start 
+// @ delete start 
 router.delete('/:user/:ingredient', (req, res) => {
     User.deleteOne({ _id: req.params.id }, (err, result) => {
         // console.log("delete result", result);
@@ -108,7 +108,7 @@ router.delete('/:user/:ingredient', (req, res) => {
       });
 });
 
-// @delet End 
+// @ delete End 
 
 
 module.exports = router;

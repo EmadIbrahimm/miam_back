@@ -41,10 +41,10 @@ passport.deserializeUser(User.deserializeUser());
 
 
 
-/* Connection & connect params   connection has been moved to config file  3/10 Emad */
+/* Connection & connect params   connection has been removed to config file  3/10 Emad */
 const port = process.env.PORT || 3000;
 
-/* End: Connection & connect params // connection has been moved to config file  3/10 Emad */
+/* End: Connection & connect params // connection has been removed to config file  3/10 Emad */
 
 /* Routes */
 app.use('/', authController); // Didier
