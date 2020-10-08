@@ -5,7 +5,7 @@ const User = require('../models/user');
 const Ingredient = require('../models/ingredient');
 
 console.log('ListIngredient', ListIngredient);
- 
+
 router.get('/users/:id', (req, res) => {
     console.log('GET /listIngredient');
     console.log('GET /listIngredient req.params.name', req.params.id);
@@ -91,24 +91,29 @@ router.post('/', (req, res) => {
             });
         });
     })
-});  
+})
 
-
-
-// @ delete start 
-router.delete('/:user/:ingredient', (req, res) => {
-    User.deleteOne({ _id: req.params.id }, (err, result) => {
+//now we can delete an ingredient within the list of user's ingredient 8/10 @mad 
+router.delete('/user/:userId/ingredient/:ingredientId', (req, res)=>{
+    ListIngredient.deleteOne({ 
+        ingredient: req.params.ingredientId,
+        user: req.params.userId}, (err, result)=>{
+            if (err) {
+                res.json({
+                    success : false,
+                    message : err.toString()
+                });
+                return;
+            }
         // console.log("delete result", result);
-        res.json({
-          success: true,
-          data: {
-            isDeleted: true
-          }
-        });
-      });
-});
+         res.json({
+            success:true,
+            data:{ isDeleted: true, }
+        })
+    })
+})
 
-// @ delete End 
+
 
 
 module.exports = router;
