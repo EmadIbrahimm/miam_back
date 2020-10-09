@@ -28,7 +28,23 @@ const recipeSchema=new mongoose.Schema({
     },
 });
 
+<<<<<<< HEAD
+const Recipe = mongoose.model('Recipe',RecipeSchema);
+
+const recipe = new Recipe({
+    title : 'rise',
+    dishType : 'main dish',
+    preparationTime :15,
+    cookingTime : 30,
+    difficultyLevel : 3,
+  });
+  
+  recipe.save((err,RecipeDB)=>{
+    console.log('err',err);
+   console.log('Recipe',RecipeDB)
+=======
 const Recipe = mongoose.model('Recipe',recipeSchema);
+>>>>>>> 3a985e4978a364033148d3eb83543956f2ea6687
 
 /*/ Recette de test
 Recipe.find({}, (err, recipes) => {

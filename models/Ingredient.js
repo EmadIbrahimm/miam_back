@@ -23,6 +23,18 @@ const ingredientSchema = new mongoose.Schema({
 
 const Ingredient = mongoose.model('Ingredient', ingredientSchema);
 
+<<<<<<< HEAD
+const ingredient = new Ingredient({
+    name :'tomate',
+    unity :'g', // "g": grams, "ml": mililiter or "" 
+    
+  });
+  
+  ingredient.save((err,IngredientDB)=>{
+    console.log('err',err);
+   console.log('IngredientDB',IngredientDB)
+=======
+>>>>>>> 3a985e4978a364033148d3eb83543956f2ea6687
 
 /*/  Ingrédients de test
 Ingredient.find({}, (err, ingredients) => {
