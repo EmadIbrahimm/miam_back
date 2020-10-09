@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Champignon",
+        "unity": "kilo"
+    },
+    {
+        "name": "Poulet",
+        "unity": "kilo"
+    },
+    {
+        "name": "Gingembre",
+        "unity": "kilo"
+    },
+    {
+        "name": "Copeaux de noix de coco",
+        "unity": "kilo"
+    },
+    {
+        "name": "Farine",
+        "unity": "kilo"
+    },
+    {
+        "name": "Curry en poudre",
+        "unity": "litre"
+    },
+    {
+        "name": "Lait",
+        "unity": "litre"
+    },
+    {
+        "name": "Huile",
+        "unity": "litre"
+    },
+    {
+        "name": "Moutarde",
+        "unity": "litre"
+    },
+    {
+        "name": "Oeuf",
+        "unity": "unite"
+    },
+    {
+        "name": "Eau",
+        "unity": "litre"
+    },
+    {  
+        "name": "Mayonnaise",
+        "unity": "litre"
+    },
+    {
+        "name": "Tomate",
+        "unity": "litre"
+    },
+    {
+        "name": "Mozzarella",
+        "unity": "kilo"
+    },
+    {
+        "name": "Spaghetti",
+        "unity": "kilo"
+    },
+    {
+        "name": "Banane",
+        "unity": "unite"
+    },
+    {
+        "name": "Orange",
+        "unity": "unite"
+    },
+    {
+        "name": "Raisin",
+        "unity": "unite"
+    },
+    {
+        "name": "Ananas",
+        "unity": "unite"
+    },
+    {
+        "name": "Basilic",
+        "unity": "kilo"
+    },
+    {
+        "name": "Persil",
+        "unity": "kilo"
+    },
+    {
+        "name": "Parmezan",
+        "unity": "kilo"
+    },
+    {
+        "name": "Oignon",
+        "unity": "unite"
+    },
+    {
+        "name": "Herbes de provence",
+        "unity": "unite"
+    },
+    {
+        "name": "Boeuf haché",
+        "unity": "unite"
+    }
+]
