@@ -45,7 +45,7 @@
             "Etape 3 : détail de l'étape"
         ],
         "title": "Spaghetti bolognaise",
-        "dishType": "Entree",
+        "dishType": "Plat",
         "video": "../src/uploads/recipes/videos/video2.jpg",
         "preparationTime": 10,
         "difficultyLevel": 3,
@@ -66,8 +66,47 @@
                 "isMandatory": true
             },
             {
-                "_id": "Boeuf haché",
+                "_id": "Herbes de provence",
                 "quantity": 250,
+                "isMandatory": false
+            }
+        ]
+    },
+    {
+        "photos": [
+            "../src/uploads/recipes/photos/photo7.jpg",
+            "../src/uploads/recipes/photos/photo8.jpg",
+            "../src/uploads/recipes/photos/photo9.jpg"
+        ],
+        "recipeSteps": [
+            "Etape 1 : détail de l'étape",
+            "Etape 2 : détail de l'étape",
+            "Etape 3 : détail de l'étape"
+        ],
+        "title": "Salade de fruits",
+        "dishType": "Dessert",
+        "video": "../src/uploads/recipes/videos/video3.jpg",
+        "preparationTime": 10,
+        "difficultyLevel": 1,
+        "ingredients": [
+            {
+                "_id": "Raisin",
+                "quantity": 25,
+                "isMandatory": true
+            },
+            {
+                "_id": "Banane",
+                "quantity": 1,
+                "isMandatory": true
+            },
+            {
+                "_id": "Orange",
+                "quantity": 2,
+                "isMandatory": true
+            },
+            {
+                "_id": "Ananas",
+                "quantity": 1,
                 "isMandatory": false
             }
         ]

@@ -4,8 +4,8 @@ const { ListIngredient } = require('../../models');
 const Model = ListIngredient;
 
 const importDb = ( ingredients, userId, cb) => { // Create function with call back in argument
-    console.log( 'importers/listIngredients #importDB ingredients', ingredients);
-    console.log( 'importers/listIngredients #importDB userId', userId);
+    // console.log( 'importers/listIngredients #importDB ingredients', ingredients);
+    // console.log( 'importers/listIngredients #importDB userId', userId);
     
     Model.collection.dropIndexes( (err) => { // Indexes arn't deleted by deletMany
         if (err !== null) {
@@ -31,12 +31,12 @@ const importDb = ( ingredients, userId, cb) => { // Create function with call ba
                     }
                    
                 });
-                console.log('importers/listIngredients #map result', result);
+                // console.log('importers/listIngredients #map result', result);
                 return result;  
 
             });
 
-            console.log('data', data);
+            // console.log('data', data);
 
             Model.insertMany(data, (err, data) => {
 

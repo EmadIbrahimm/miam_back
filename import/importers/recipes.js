@@ -4,7 +4,7 @@ const { Recipe } = require('../../models');
 const Model = Recipe;
 
 const importDb = ( ingredients, cb) => { // Create function with call back in argument
-    console.log( 'importers/listIngredients #importDB ingredients', ingredients);
+    // console.log( 'importers/listIngredients #importDB ingredients', ingredients);
     
     Model.collection.dropIndexes( (err) => { // Indexes arn't deleted by deletMany
         if (err !== null) {
@@ -32,7 +32,7 @@ const importDb = ( ingredients, cb) => { // Create function with call back in ar
                 return recipe;
             });
 
-            console.log('data', data[0]);
+            // console.log('data', data[0]);
 
             Model.insertMany(data, (err, data) => {
 
