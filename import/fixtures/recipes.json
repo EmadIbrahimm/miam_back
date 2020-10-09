@@ -18,17 +18,17 @@
         "ingredients": [
             {
                 "_id": "Tomate",
-                "quantity": 1,
+                "quantity": 10,
                 "isMandatory": true
             },
             {
                 "_id": "Mozzarella",
-                "quantity": 20,
+                "quantity": 1,
                 "isMandatory": true
             },
             {
                 "_id": "Basilic",
-                "quantity": 250,
+                "quantity": 10,
                 "isMandatory": false
             }
         ]
@@ -52,12 +52,12 @@
         "ingredients": [
             {
                 "_id": "Tomate",
-                "quantity": 2,
+                "quantity": 5,
                 "isMandatory": true
             },
             {
                 "_id": "Spaghetti",
-                "quantity": 1,
+                "quantity": 2,
                 "isMandatory": true
             },
             {
@@ -67,7 +67,7 @@
             },
             {
                 "_id": "Herbes de provence",
-                "quantity": 250,
+                "quantity": 1,
                 "isMandatory": false
             }
         ]
