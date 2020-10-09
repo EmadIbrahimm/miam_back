@@ -18,13 +18,13 @@ const IngredientSchema = new mongoose.Schema({
 
 const Ingredient = mongoose.model('Ingredient',IngredientSchema);
 
-const Ingredient = new Ingredient({
+const ingredient = new Ingredient({
     name :'tomate',
     unity :'g', // "g": grams, "ml": mililiter or "" 
     
   });
   
-  Ingredient.save((err,IngredientDB)=>{
+  ingredient.save((err,IngredientDB)=>{
     console.log('err',err);
    console.log('IngredientDB',IngredientDB)
 

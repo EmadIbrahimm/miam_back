@@ -20,7 +20,7 @@ const RecipeSchema=new mongoose.Schema({
 
 const Recipe = mongoose.model('Recipe',RecipeSchema);
 
-const Recipe = new Recipe({
+const recipe = new Recipe({
     title : 'rise',
     dishType : 'main dish',
     preparationTime :15,
@@ -28,7 +28,7 @@ const Recipe = new Recipe({
     difficultyLevel : 3,
   });
   
-  Recipe.save((err,RecipeDB)=>{
+  recipe.save((err,RecipeDB)=>{
     console.log('err',err);
    console.log('Recipe',RecipeDB)
 
