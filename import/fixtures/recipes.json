@@ -1,9 +1,9 @@
 [
     {
         "photos": [
-            "../src/uploads/recipes/photos/photo1.jpg",
-            "../src/uploads/recipes/photos/photo2.jpg",
-            "../src/uploads/recipes/photos/photo3.jpg"
+            "../image/photo1.jpg",
+            "../image/photo2.jpg",
+            "../image/photo3.jpg"
         ],
         "recipeSteps": [
             "Etape 1 : détail de l'étape",
@@ -12,7 +12,7 @@
         ],
         "title": "Tomate Mozza",
         "dishType": "Entree",
-        "video": "../src/uploads/recipes/videos/video1.jpg",
+        "video": "../videos/video1.jpg",
         "preparationTime": 10,
         "difficultyLevel": 3,
         "ingredients": [
@@ -35,9 +35,9 @@
     },
     {
         "photos": [
-            "../src/uploads/recipes/photos/photo4.jpg",
-            "../src/uploads/recipes/photos/photo5.jpg",
-            "../src/uploads/recipes/photos/photo6.jpg"
+            "../image/photo4.jpg",
+            "../image/photo5.jpg",
+            "../image/photo6.jpg"
         ],
         "recipeSteps": [
             "Etape 1 : détail de l'étape",
@@ -46,7 +46,7 @@
         ],
         "title": "Spaghetti bolognaise",
         "dishType": "Plat",
-        "video": "../src/uploads/recipes/videos/video2.jpg",
+        "video": "../videos/video2.jpg",
         "preparationTime": 10,
         "difficultyLevel": 3,
         "ingredients": [
@@ -74,9 +74,9 @@
     },
     {
         "photos": [
-            "../src/uploads/recipes/photos/photo7.jpg",
-            "../src/uploads/recipes/photos/photo8.jpg",
-            "../src/uploads/recipes/photos/photo9.jpg"
+            "../image/photo7.jpg",
+            "../image/photo8.jpg",
+            "../image/photo9.jpg"
         ],
         "recipeSteps": [
             "Etape 1 : détail de l'étape",
@@ -85,13 +85,13 @@
         ],
         "title": "Salade de fruits",
         "dishType": "Dessert",
-        "video": "../src/uploads/recipes/videos/video3.jpg",
+        "video": "../videos/video3.jpg",
         "preparationTime": 10,
         "difficultyLevel": 1,
         "ingredients": [
             {
                 "_id": "Raisin",
-                "quantity": 25,
+                "quantity": 15,
                 "isMandatory": true
             },
             {
