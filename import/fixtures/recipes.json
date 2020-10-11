@@ -13,8 +13,8 @@
         "title": "Tomate Mozza",
         "dishType": "Entree",
         "video": "../videos/video1.jpg",
-        "preparationTime": 10,
-        "difficultyLevel": 3,
+        "preparationTime": 5,
+        "difficultyLevel": 1,
         "ingredients": [
             {
                 "_id": "Tomate",
@@ -47,7 +47,7 @@
         "title": "Spaghetti bolognaise",
         "dishType": "Plat",
         "video": "../videos/video2.jpg",
-        "preparationTime": 10,
+        "preparationTime": 30,
         "difficultyLevel": 3,
         "ingredients": [
             {
@@ -87,7 +87,7 @@
         "dishType": "Dessert",
         "video": "../videos/video3.jpg",
         "preparationTime": 10,
-        "difficultyLevel": 1,
+        "difficultyLevel": 2,
         "ingredients": [
             {
                 "_id": "Raisin",
